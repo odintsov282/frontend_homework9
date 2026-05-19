@@ -42,6 +42,21 @@ export const AuthProvider = ({children}) => {
 		})
 	}
 
+	const register = ({ email, password, firstName, lastName }) => {
+		supabaseClient.auth.signUp({
+			email,
+			password,
+			options: {
+			data: {
+				firstName,
+				lastName
+			}
+			}
+		}).then(() => {
+			document.location.href = '/'
+		})
+	}
+
 	// supabaseClient.auth.signUp()
 
 	return (
@@ -50,7 +65,8 @@ export const AuthProvider = ({children}) => {
 			isFetching,
 			isError,
 			logout,
-			login
+			login,
+			register
 		}}>
 			{children}
 		</AuthContext>

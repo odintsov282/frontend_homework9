@@ -41,7 +41,7 @@ export const HomePage = () => {
 					</> :
 						<div className={s.actions}>
 						<NavLink className={s.ghostButton} to="./sign-in">Sign in</NavLink>
-						<NavLink className={s.primaryButton} to="./sign-up">Register</NavLink>
+						<NavLink className={s.primaryButton} to="/sign-up">Register</NavLink>
 					</div>}
 				</header>
 				<div className={s.content}>
